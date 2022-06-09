@@ -1,0 +1,18 @@
+{
+  "name": "neos4voicebox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "crypto": "^1.0.1",
+    "express": "^4.18.1",
+    "json2emap": "^0.2.0",
+    "voicevox-api-client": "^1.1.0"
+  }
+}
