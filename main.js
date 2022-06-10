@@ -35,8 +35,10 @@ app.get("/", async (req, res) => {
         processingMap.set(hash, true)
         await createVoice(text, hash, speakerId)
         const waithing = waithingMap.get(hash)
-        waithing.forEach((wres) => wres.sendFile(path.join(__dirname, `./wav/${hash}`)))
-        waithingMap.delete(hash)
+        if(waithing) {
+            waithing.forEach((wres) => wres.sendFile(path.join(__dirname, `./wav/${hash}`)))
+            waithingMap.delete(hash)
+        }
         processingMap.delete(hash)
         return res.sendFile(path.join(__dirname, `./wav/${hash}`))
     } else {
