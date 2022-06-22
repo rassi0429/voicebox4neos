@@ -2,6 +2,7 @@ version: "3.7"
 services:
   voicevox_engine:
     image: voicevox/voicevox_engine:cpu-ubuntu20.04-latest
+    restart: always
     ports:
       - "127.0.0.1:50021:50021"
     tty: true
