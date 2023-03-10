@@ -31,7 +31,7 @@ app.get("/", async (req, res) => {
         return res.sendFile(path.join(__dirname, `./fusei.wav`))
     }
     
-    const hash = crypto.createHash('md5').update(speakerId + text).digest('hex')
+    const hash = crypto.createHash('md5').update(speakerId + text + speed).digest('hex')
     
     if (await fileExists(`wav/${hash}`)) {
         return res.sendFile(path.join(__dirname, `./wav/${hash}`))
